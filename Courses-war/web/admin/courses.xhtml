@@ -15,7 +15,7 @@
         <h:link outcome="/admin/admin" value="Administration" />
         <h3>Ajouter un cours</h3>
         
-        <h:form>
+        <h:form enctype="multipart/form-data">
             <h4>Formulaire ajout cours</h4>
             <h:outputText value="Le titre :"/>
             <h:inputText value="#{course.title}" id="title"></h:inputText>
@@ -26,6 +26,9 @@
             <h:inputTextarea value="#{course.content}" id="content"></h:inputTextarea>
             <h:message for="content"></h:message>
             <br></br><br></br>
+            
+            <h3> Ajouter une image</h3>
+            <h:inputFile id="file" value="#{course.image}"></h:inputFile>
             
             <h:commandButton action="#{course.createCourse()}" value="S'enregistrer"></h:commandButton>
         </h:form>

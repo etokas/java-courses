@@ -43,6 +43,9 @@ public class User implements Serializable{
     private String email;
     
     @Column
+    private String username;
+    
+    @Column
     private Date createdAt;
     
     @OneToMany(targetEntity = Courses.class, mappedBy = "user")
@@ -118,6 +121,16 @@ public class User implements Serializable{
         this.createdAt = createdAt;
         return this;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public User setUsername(String username) {
+        this.username = username;
+        return this;
+    }
+    
    
     
 }

@@ -40,6 +40,13 @@ public class SecurityManaged implements Serializable{
             errorMessage = "Informations saisis incorrect";
         } else {
            
+            try {
+                User user = userDao.findByUsername(username);
+                System.out.println(user);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+                        
             errorMessage = " ";
             HttpSession session = Session.getSession();
             session.setAttribute("username", username);

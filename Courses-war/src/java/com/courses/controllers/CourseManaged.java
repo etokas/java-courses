@@ -30,7 +30,10 @@ public class CourseManaged implements Serializable{
     
     private String content;
     
+    private String image;
+    
     public String createCourse(){
+        
         try {
             courseDao.createCourse(title, content);
         } catch (Exception e) {
@@ -55,6 +58,13 @@ public class CourseManaged implements Serializable{
     public void setContent(String content) {
         this.content = content;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
    
-    
 }

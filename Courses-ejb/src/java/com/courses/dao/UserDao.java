@@ -24,8 +24,8 @@ import javax.persistence.criteria.Root;
 @Stateless
 public class UserDao {
     
-    @PersistenceContext(name = "PU")
-    private EntityManager em;
+    @PersistenceContext(unitName = "PU")
+    EntityManager em;
     
     public void create(String firstname, String lastname, String password, String email) throws Exception {
         
@@ -49,11 +49,18 @@ public class UserDao {
        
     }
     
-    public static User findByUsername(String username) {
-        
-        
-        
-        return  new  User();
+    public User findByUsername(String username) throws Exception{
+        try {
+            CriteriaBuilder builder = em.getCriteriaBuilder();
+            CriteriaQuery queryBuilder = builder.createQuery();
+            Root<User> a = queryBuilder.from(User.class);
+            queryBuilder.where(builder.equal(a.get("username"), username));
+            Query query = em.createQuery(queryBuilder);
+            return (User) query.getSingleResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
     
     public static boolean checkUser(String email, String password){
