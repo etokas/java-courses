@@ -8,5 +8,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
-
+Courses-ejb/nbproject/private/
+Courses-war/nbproject/private/
 # End of https://www.gitignore.io/api/netbeans

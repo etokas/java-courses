@@ -5,8 +5,9 @@
         <group>
             <file>file:/Users/sylva/netbean/Courses/Courses-war/src/java/com/courses/filters/AuthFilter.java</file>
             <file>file:/Users/sylva/netbean/Courses/Courses-war/src/java/com/courses/controllers/CourseManaged.java</file>
+            <file>file:/Users/sylva/netbean/Courses/Courses-war/web/includes/footer.xhtml</file>
             <file>file:/Users/sylva/netbean/Courses/Courses-war/web/index.xhtml</file>
-            <file>file:/Users/sylva/netbean/Courses/Courses-war/web/admin/question.xhtml</file>
+            <file>file:/Users/sylva/netbean/Courses/Courses-war/web/includes/header.xhtml</file>
             <file>file:/Users/sylva/netbean/Courses/Courses-war/src/java/com/courses/controllers/UserManaged.java</file>
             <file>file:/Users/sylva/netbean/Courses/Courses-war/web/admin/courses.xhtml</file>
             <file>file:/Users/sylva/netbean/Courses/Courses-war/src/java/com/courses/controllers/SecurityManaged.java</file>

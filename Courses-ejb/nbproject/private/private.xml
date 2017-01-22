@@ -3,10 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/sylva/netbean/Courses/Courses-ejb/src/java/com/courses/entity/Courses.java</file>
             <file>file:/Users/sylva/netbean/Courses/Courses-ejb/src/java/com/courses/dao/UserDao.java</file>
-            <file>file:/Users/sylva/netbean/Courses/Courses-ejb/src/conf/persistence.xml</file>
-            <file>file:/Users/sylva/netbean/Courses/Courses-ejb/src/java/com/courses/entity/User.java</file>
             <file>file:/Users/sylva/netbean/Courses/Courses-ejb/src/java/com/courses/dao/CourseDao.java</file>
         </group>
     </open-files>
