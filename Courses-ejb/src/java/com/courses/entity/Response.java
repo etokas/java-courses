@@ -6,6 +6,7 @@
 package com.courses.entity;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,6 +23,9 @@ public class Response implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    
+    @Column
+    private String texte;
     
     @ManyToOne
     private Quizz quizz;
@@ -41,6 +45,17 @@ public class Response implements Serializable {
     public void setQuizz(Quizz quizz) {
         this.quizz = quizz;
     }
+
+    public String getTexte() {
+        return texte;
+    }
+
+    public Response setTexte(String texte) {
+        this.texte = texte;
+        
+        return this;
+    }
+    
     
     
 }

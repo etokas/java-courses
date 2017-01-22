@@ -43,4 +43,18 @@ public class CourseDao extends AbstractDao{
         Query query = em.createQuery(cquery);
         return (List<Courses>) query.getResultList();
     }
+    
+    public Courses find(String id) throws Exception{
+        CriteriaQuery cquery = getBuilder().createQuery();
+        Root e = cquery.from(Courses.class);
+        cquery.where(getBuilder().equal(e.get("id"), id));
+        Courses courses;
+        try {
+            Query query = em.createQuery(cquery);
+            return courses = (Courses) query.getSingleResult();
+        } catch (Exception ex) {
+            return null;
+
+        }
+    }
 }
