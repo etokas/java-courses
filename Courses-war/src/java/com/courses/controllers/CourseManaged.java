@@ -40,7 +40,7 @@ public class CourseManaged implements Serializable{
             e.printStackTrace();
         }
         
-        return "admin";
+        return "/admin/admin.xhtml?faces-redirect=true";
     }
     
     public String getTitle() {

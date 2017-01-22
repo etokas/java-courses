@@ -2,7 +2,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -15,6 +16,20 @@
         <h3>Espaces Administration</h3>
         
         <h4>Liste de cours</h4>
+        
+        <table>
+            <tr>
+                <td>Tittre</td>
+                <td>Contenu</td>
+                <td>Action</td>
+            </tr>
+            <c:forEach var="course" items="#{admin.courses}">
+            <tr>
+                <td>#{course.title}</td>
+                <td>#{course.content.subSequence(0, 5)}</td>
+            </tr>
+            </c:forEach>
+        </table>
         
         
         <h:link outcome="/admin/courses" value="Ajouter un cours" />

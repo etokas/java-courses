@@ -22,11 +22,9 @@ import javax.persistence.criteria.Root;
  * @author sylva
  */
 @Stateless
-public class UserDao {
+public class UserDao extends AbstractDao{
     
-    @PersistenceContext(unitName = "PU")
-    EntityManager em;
-    
+
     public void create(String firstname, String lastname, String password, String email) throws Exception {
         
         String salt = UserUtil.generateSalt();
@@ -51,10 +49,9 @@ public class UserDao {
     
     public User findByUsername(String username) throws Exception{
         try {
-            CriteriaBuilder builder = em.getCriteriaBuilder();
-            CriteriaQuery queryBuilder = builder.createQuery();
+            CriteriaQuery queryBuilder = getBuilder().createQuery();
             Root<User> a = queryBuilder.from(User.class);
-            queryBuilder.where(builder.equal(a.get("username"), username));
+            queryBuilder.where(getBuilder().equal(a.get("username"), username));
             Query query = em.createQuery(queryBuilder);
             return (User) query.getSingleResult();
         } catch (Exception e) {
@@ -68,7 +65,7 @@ public class UserDao {
         return true;
     }
     
-    public List<User> getAll() {
+    public List<User> findAll() {
         Query query = em.createQuery("SELECT u FROM User u");
         List<User> users = query.getResultList();
         return users;
