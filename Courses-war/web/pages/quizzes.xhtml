@@ -4,35 +4,25 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <div id="header">
-            <ui:insert>
-                <ui:include src="/includes/header.xhtml"></ui:include>
-            </ui:insert>
-        </div>
-        
-        <h3>Formation fini</h3>
-        <p>Afin de valiser votre formation, veillez tester vos connaissances 
-            sur ce quizz ci-dessous liées au cours que vous venez de terminer
-        </p>
-        
-        <h4>Quizz pour #{finish.course.title}</h4>
-        
-        <hr></hr>
-        
-        <h5>Veillez imprimer votre certificat</h5>
-        <h:link outcome="/pages/certificat" value="Imprimer">
-            
-        </h:link>
-        
-        <div id="footer">
-            <ui:insert>
-                <ui:include src="/includes/footer.xhtml"></ui:include>
-            </ui:insert>
-        </div>
+        <h:body>
+        <ui:composition template="/layout.xhtml">
+            <ui:define name="content" >
+
+                <h3>Formation fini</h3>
+                <p>Afin de valiser votre formation, veillez tester vos connaissances 
+                    sur ce quizz ci-dessous liées au cours que vous venez de terminer
+                </p>
+
+                <h4>Quizz pour #{finish.course.title}</h4>
+
+                <hr></hr>
+
+                <h5>Veillez imprimer votre certificat</h5>
+                <h:link outcome="/pages/certificat" value="Imprimer">
+
+                </h:link>
+            </ui:define>
+         </ui:composition>
     </h:body>
 </html>
 

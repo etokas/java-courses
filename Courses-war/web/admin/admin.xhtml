@@ -5,46 +5,34 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <div id="header">
-            <ui:insert>
-                <ui:include src="/includes/header.xhtml"></ui:include>
-            </ui:insert>
-        </div>
-        <h3>Espaces Administration</h3>
-        
-        <h4>Liste de cours</h4>
-        
-        <table>
-            <tr>
-                <td>Tittre</td>
-                <td>Contenu</td>
-                <td>Action</td>
-            </tr>
-            <c:forEach var="c" items="#{admin.courses}">
-            <tr>
-                <td>#{c.title}</td>
-                <td>#{c.content}</td>
-                <td>
-                    <h:link outcome="/admin/quizz" value="Ajouter un quizz">
-                        <f:param name="coursId" value="#{c.id}"/>
-                    </h:link>
-                </td>
-            </tr>
-            </c:forEach>
-        </table>
-        
-        
-        <h:link outcome="/admin/courses" value="Ajouter un cours" />
+        <h:body>
+        <ui:composition template="/layout.xhtml">
+            <ui:define name="content" >
+                <h3>Espaces Administration</h3>
 
-        <div id="footer">
-            <ui:insert>
-                <ui:include src="/includes/footer.xhtml"></ui:include>
-            </ui:insert>
-        </div>
+                <h4>Liste de cours</h4>
+
+                <table>
+                    <tr>
+                        <td>Tittre</td>
+                        <td>Contenu</td>
+                        <td>Action</td>
+                    </tr>
+                    <c:forEach var="c" items="#{admin.courses}">
+                    <tr>
+                        <td>#{c.title}</td>
+                        <td>#{c.content}</td>
+                        <td>
+                            <h:link outcome="/admin/quizz" value="Ajouter un quizz">
+                                <f:param name="coursId" value="#{c.id}"/>
+                            </h:link>
+                        </td>
+                    </tr>
+                    </c:forEach>
+                </table>
+                <h:link outcome="/admin/courses" value="Ajouter un cours" />
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>
 

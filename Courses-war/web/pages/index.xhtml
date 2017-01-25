@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:composition>
+
+            <h4>Liste de cours disponible</h4>
+
+            <c:forEach var="c" items="#{home.courses}">
+                <tr>
+                    <td>#{c.title}</td>
+                    <td>#{c.content}</td>
+                    <td>
+                        <h:link outcome="/pages/course" value="Lire le cours">
+                            <f:param name="id" value="#{c.id}"/>
+                        </h:link>
+                    </td>
+                </tr>
+                <br></br>
+            </c:forEach>
+            <br></br><br></br>
+            <h:link outcome="/security/register" value="S'enregistrer" />
+
+            <h:link outcome="/security/login" value="Se connecter" />
+    </ui:composition>
+</html>
+

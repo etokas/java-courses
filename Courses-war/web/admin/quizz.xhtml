@@ -5,47 +5,38 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
-    <h:head>
-        <title>Facelet Title</title>
-    </h:head>
-    <h:body>
-        <div id="header">
-            <ui:insert>
-                <ui:include src="/includes/header.xhtml"></ui:include>
-            </ui:insert>
-        </div>
-        <h:link outcome="/admin/admin" value="Administration" />
+        <h:body>
+        <ui:composition template="/layout.xhtml">
+            <ui:define name="content" >
+                <h:link outcome="/admin/admin" value="Administration" />
 
-        <h3>Liste de quizz pour le cours #{quizz.course.title}</h3>
-        
-        <h4>Liste de questions</h4>
-                
-        <h:form>
-            <h5>Question</h5>
-            <h:outputText value="La question"/>
-            <h:inputText value="#{quizz.question}" id="question"></h:inputText>
-            <br></br><br></br> 
-            <h5>Reponses</h5>
-            <table>
-                <tr>
-                    <td>Texte</td>
-                </tr>
-                <c:forEach var="r" items="#{quizz.responses}">
-                <tr>
-                    <td>#{r.texte}</td>                 
-                </tr>
-                </c:forEach>
-            </table>
-            <h:inputText value="#{quizz.response}"></h:inputText>
-            <h:commandButton action="#{quizz.addResponse}" value="Ajouter la reponse"/>
-        </h:form>
-        <hr></hr>
-        <h:link value="Ajouter une autre question" />
-        <div id="footer">
-            <ui:insert>
-                <ui:include src="/includes/footer.xhtml"></ui:include>
-            </ui:insert>
-        </div>
+                <h3>Liste de quizz pour le cours #{quizz.course.title}</h3>
+
+                <h4>Liste de questions</h4>
+
+                <h:form>
+                    <h5>Question</h5>
+                    <h:outputText value="La question"/>
+                    <h:inputText value="#{quizz.question}" id="question"></h:inputText>
+                    <br></br><br></br> 
+                    <h5>Reponses</h5>
+                    <table>
+                        <tr>
+                            <td>Texte</td>
+                        </tr>
+                        <c:forEach var="r" items="#{quizz.responses}">
+                        <tr>
+                            <td>#{r.texte}</td>                 
+                        </tr>
+                        </c:forEach>
+                    </table>
+                    <h:inputText value="#{quizz.response}"></h:inputText>
+                    <h:commandButton action="#{quizz.addResponse}" value="Ajouter la reponse"/>
+                </h:form>
+                <hr></hr>
+                <h:link value="Ajouter une autre question" />
+            </ui:define>
+         </ui:composition>
     </h:body>
 </html>
 
