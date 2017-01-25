@@ -2,7 +2,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -22,9 +24,23 @@
             <h5>Question</h5>
             <h:outputText value="La question"/>
             <h:inputText value="#{quizz.question}" id="question"></h:inputText>
-            <br></br><br></br>          
+            <br></br><br></br> 
+            <h5>Reponses</h5>
+            <table>
+                <tr>
+                    <td>Texte</td>
+                </tr>
+                <c:forEach var="r" items="#{quizz.responses}">
+                <tr>
+                    <td>#{r.texte}</td>                 
+                </tr>
+                </c:forEach>
+            </table>
+            <h:inputText value="#{quizz.response}"></h:inputText>
+            <h:commandButton action="#{quizz.addResponse}" value="Ajouter la reponse"/>
         </h:form>
-
+        <hr></hr>
+        <h:link value="Ajouter une autre question" />
         <div id="footer">
             <ui:insert>
                 <ui:include src="/includes/footer.xhtml"></ui:include>

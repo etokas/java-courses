@@ -11,12 +11,15 @@ import com.courses.entity.Courses;
 import com.courses.entity.Question;
 import com.courses.entity.Quizz;
 import com.courses.entity.Response;
+import com.sun.xml.ws.config.metro.parser.jsr109.ResAuthType;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
+import javax.faces.component.behavior.AjaxBehavior;
+import javax.faces.event.AjaxBehaviorEvent;
 
 /**
  *
@@ -39,15 +42,31 @@ public class QuizzManaged extends AbstractManaged{
     private ResponseManaged responseBean;
     
     private String question;
+    
+    private List<Response> responses;
+    
+    private Response response;
         
     private Courses course;
 
     private Quizz quizzes;
     
-    public void addQuizze(){
-        
+    public List<Response> getResponses(){
+        return this.responses;
     }
 
+    public Response getResponse() {
+        return response;
+    }
+    
+    public void addResponse(){
+        responses.add(getResponse());
+    }
+
+    public void addQuestion(AjaxBehaviorEvent behavior){
+        
+    }
+    
     public String getQuestion() {
         if(questionBean != null){
             question = questionBean.getQuestion();
@@ -102,7 +121,5 @@ public class QuizzManaged extends AbstractManaged{
     public void setResponseBean(ResponseManaged responseBean) {
         this.responseBean = responseBean;
     }
-    
-    
     
 }

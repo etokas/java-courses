@@ -3,7 +3,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Facelet Title</title>
@@ -15,24 +14,19 @@
             </ui:insert>
         </div>
         
-        <h4>Liste de cours disponible</h4>
+        <h3>Formation fini</h3>
+        <p>Afin de valiser votre formation, veillez tester vos connaissances 
+            sur ce quizz ci-dessous liées au cours que vous venez de terminer
+        </p>
         
-        <c:forEach var="c" items="#{home.courses}">
-            <tr>
-                <td>#{c.title}</td>
-                <td>#{c.content}</td>
-                <td>
-                    <h:link outcome="/pages/course" value="Lire le cours">
-                        <f:param name="id" value="#{c.id}"/>
-                    </h:link>
-                </td>
-            </tr>
-            <br></br>
-        </c:forEach>
-        <br></br><br></br>
-        <h:link outcome="/security/register" value="S'enregistrer" />
+        <h4>Quizz pour #{finish.course.title}</h4>
         
-        <h:link outcome="/security/login" value="Se connecter" />
+        <hr></hr>
+        
+        <h5>Veillez imprimer votre certificat</h5>
+        <h:link outcome="/pages/certificat" value="Imprimer">
+            
+        </h:link>
         
         <div id="footer">
             <ui:insert>

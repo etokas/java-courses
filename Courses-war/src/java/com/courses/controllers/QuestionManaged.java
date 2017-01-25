@@ -5,9 +5,6 @@
  */
 package com.courses.controllers;
 
-import com.courses.entity.Question;
-import com.courses.entity.Response;
-import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
