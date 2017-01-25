@@ -11,3 +11,6 @@ nbdist/
 /Courses-ejb/nbproject/private/
 /Courses-war/nbproject/private/
 # End of https://www.gitignore.io/api/netbeans
+/Courses-ejb/nbproject/ant-deploy.xml
+/Courses-war/nbproject/ant-deploy.xml
+nbproject/ant-deploy.xml
