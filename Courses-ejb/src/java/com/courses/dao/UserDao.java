@@ -60,7 +60,7 @@ public class UserDao extends AbstractDao{
         }
     }
     
-    public static boolean checkUser(String email, String password){
+    public boolean checkUser(String email, String password){
         User user = new User();
         return true;
     }

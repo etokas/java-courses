@@ -36,12 +36,7 @@ public class UserManaged implements Serializable {
     public String register(){
         
         try {
-             userDao.create(firstname, lastname, password, lastname);
-             
-             List<User> users = userDao.findAll();
-             System.out.println("com.courses.controllers.UserManaged.register()");
-             System.out.println(users);
-           
+             userDao.create(firstname, lastname, password, lastname);           
         } catch (Exception e) {
             e.printStackTrace();
         }
