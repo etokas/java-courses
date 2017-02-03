@@ -10,3 +10,142 @@ and open the template in the editor.
 
 body{
 }
+
+#headerwrap {
+  background: url(../resources/img/2.jpg) no-repeat center top;
+  margin-top: 80px;
+  background-color: #F0F8FF;
+  padding-top: 10px;
+  text-align:center;
+  background-attachment: relative;
+  background-position: center center;
+  min-height: 750px;
+  width: 100%;
+  font-size: 5Opx;
+  
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.navbar {
+    font-weight: 800;
+    font-size: 14px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.navbar-inverse {
+    background: #2d2d2d;
+    border-color: #2d2d2d;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background: #ff7878
+}
+
+.navbar-inverse .navbar-brand {
+    color: #999999;
+    font-weight: bolder;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.navbar-inverse .navbar-brand i {
+    color: #ff7878;
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+#headerwrap p{
+    margin: 250px 0 10px 0px;
+    font-size: 48px;
+    color: white;
+    font-weight: bold;
+}
+
+a {
+    color: #9d9d9d;
+    text-decoration: none;
+}
+
+
+#f {
+	background: #2d2d2d;
+	padding-top: 50px;
+	padding-bottom: 100px;
+}
+
+#f i {
+	color: #bdbdbd;
+	font-size: 30px;
+	padding: 20px;
+}
+
+#f i:hover {
+	color: #ff7878;
+}
+
+/* bloc en haut du footer */
+#r {
+	background: #F8F8FF;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+#r h4 {
+	color: black;
+	font-weight: 700;
+}
+
+#r p {
+	color: black;
+}
+
+
+/*login form*/
+.wrapper {
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.form-signin {
+  max-width: 380px;
+  padding: 15px 35px 45px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 30px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}

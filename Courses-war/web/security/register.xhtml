@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='UTF-8' ?>
+ <!--<?xml version='1.0' encoding='UTF-8' ?>-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
@@ -6,25 +6,33 @@
         <h:body>
         <ui:composition template="/layout.xhtml">
             <ui:define name="content" >
-                <h3>Veillez vous enregistrer</h3>
-                <h:form>
+                <br></br>
+                <br></br>
+                <div class="wrapper">
+                <h:form class="form-signin">
+                    <h2 class="form-signin-heading">Incrivez-vous!</h2>
+                    <div class="form-group">
                     <h:outputText value="Votre nom :"/>
-                    <h:inputText value="#{user.firstname}" id="firstname"></h:inputText>
+                    <h:inputText class="form-control" value="#{user.firstname}" id="firstname"></h:inputText>
                     <h:message for="firstname"></h:message> 
-                    <br></br><br></br>
-
+                    </div>
+                    <br></br>
+                    <div class="form-group">
                     <h:outputText value="Votre prenom :"/>
-                    <h:inputText value="#{user.lastname}" id="lastname"></h:inputText>
+                    <h:inputText class="form-control" value="#{user.lastname}" id="lastname"></h:inputText>
                     <h:message for="lastname"></h:message>
-                    <br></br><br></br>
-
+                    </div>
+                    <br></br>
+                    <div class="form-group">
                     <h:outputText value="Votre mot de passe :"/>
-                    <h:inputText value="#{user.password}" id="password"></h:inputText>
-                    <br></br><br></br>
+                    <h:inputText class="form-control" value="#{user.password}" id="password"></h:inputText>
+                    </div>
+                    <br></br>
 
-                    <h:commandButton action="#{user.register()}" value="S'enregistrer"></h:commandButton>
+                    <h:commandButton action="#{user.register()}" class="btn btn-info btn-block" value="S'enregistrer"></h:commandButton>
 
                 </h:form>
+                </div>
             </ui:define>
          </ui:composition>
     </h:body>

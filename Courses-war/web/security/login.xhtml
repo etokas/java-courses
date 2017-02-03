@@ -6,20 +6,28 @@
         <h:body>
         <ui:composition template="/layout.xhtml">
             <ui:define name="content" >
-                <h3>Veillez vous enregistrer</h3>
-                <h:form>
+                <br></br>
+                <br></br>
+                <div class="wrapper">
+                <h:form class="form-signin" >
+                    <h2 class="form-signin-heading">Connectez-vous!</h2>
+                    <div class="form-group">
                     <h:outputText value="Votre nom d'utilisateur :"/>
-                    <h:inputText value="#{login.username}" id="username"></h:inputText>
+                    <h:inputText class="form-control" value="#{login.username}" id="username"></h:inputText>
                     <h:message for="username"></h:message>
-                    <br></br><br></br>
+                    </div>
+                    <br></br>
+                    <div class="form-group">
                     <h:outputText value="Votre mot de passe :"/>
-                    <h:inputSecret value="#{login.password}" id="password"></h:inputSecret>
+                    <h:inputSecret class="form-control" value="#{login.password}" id="password"></h:inputSecret>
                     <h:message for="password"></h:message> 
-                    <br></br><br></br>
-                    <h:commandButton action="#{login.submit()}" value="Se connecter"></h:commandButton>
+                    </div>
+                    <br></br>
+                    <h:commandButton action="#{login.submit()}" class="btn btn-lg btn-danger btn-block" value="Se connecter"></h:commandButton>
 
                 </h:form>
-
+                </div>
+                
                 <h:outputText value="#{login.errorMessage}"></h:outputText>
             </ui:define>
          </ui:composition>
