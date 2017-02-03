@@ -14,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -39,6 +41,7 @@ public class Courses implements Serializable {
     private User user;
     
     @Column
+    @Temporal(TemporalType.DATE)
     private Date createdAt;
    
 
