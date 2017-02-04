@@ -14,6 +14,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -46,6 +48,7 @@ public class User implements Serializable{
     private String username;
     
     @Column
+    @Temporal(TemporalType.DATE)
     private Date createdAt;
     
     @OneToMany(targetEntity = Courses.class, mappedBy = "user")

@@ -16,7 +16,7 @@ import javax.persistence.criteria.CriteriaBuilder;
 abstract public class AbstractDao {
     
         
-    @PersistenceContext(unitName = "PU")
+    @PersistenceContext
     EntityManager em;
     
     public CriteriaBuilder getBuilder() {
