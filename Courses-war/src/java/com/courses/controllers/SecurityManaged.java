@@ -42,16 +42,12 @@ public class SecurityManaged implements Serializable{
            
             try {
                 User user = userDao.findByUsername(username);
-                System.out.println(user);
+                Session.getSession().setAttribute("user", user);
+                errorMessage = " ";
+                return "/admin/admin.xhtml?faces-redirect=true";
             } catch (Exception e) {
                 System.out.println(e.getMessage());
-            }
-                        
-            errorMessage = " ";
-            HttpSession session = Session.getSession();
-            session.setAttribute("username", username);
-            
-            return "/admin/admin.xhtml?faces-redirect=true";
+            }           
         }
         
         return "login";

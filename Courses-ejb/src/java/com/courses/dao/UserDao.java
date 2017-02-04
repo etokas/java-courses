@@ -13,6 +13,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import com.courses.utils.UserUtil;
 import java.util.Date;
+import javax.persistence.NoResultException;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -25,7 +26,7 @@ import javax.persistence.criteria.Root;
 public class UserDao extends AbstractDao{
     
 
-    public void create(String firstname, String lastname, String password, String email) throws Exception {
+    public void create(String firstname, String lastname, String password, String email, String username) throws Exception {
         
         String salt = UserUtil.generateSalt();
         
@@ -37,10 +38,11 @@ public class UserDao extends AbstractDao{
                     .setPassword(hashPassword)
                     .setSalt(salt)
                     .setCreatedAt(new Date())
+                    .setUsername(username)
                     .setEmail(email);
             
            em.persist(user);
-                                    
+                                               
         } catch (Exception e) {
             throw new Exception("Impossible d'enregistrer l'utilisateur");
         }
@@ -60,15 +62,36 @@ public class UserDao extends AbstractDao{
         }
     }
     
-    public boolean checkUser(String email, String password){
-        User user = new User();
-        return true;
+    public boolean checkUser(String username, String password){
+        CriteriaQuery queryBuilder = getBuilder().createQuery();
+        Root<User> a = queryBuilder.from(User.class);
+        queryBuilder.where(getBuilder().equal(a.get("username"), username));
+        Query query = em.createQuery(queryBuilder);
+        try {
+             User user = (User) query.getSingleResult();
+             return true;
+        } catch (NoResultException e) {
+            return false;
+        }
     }
     
     public List<User> findAll() {
         Query query = em.createQuery("SELECT u FROM User u");
         List<User> users = query.getResultList();
         return users;
+    }
+    
+    public boolean userExist(String username){
+        CriteriaQuery queryBuilder = getBuilder().createQuery();
+        Root<User> a = queryBuilder.from(User.class);
+        queryBuilder.where(getBuilder().equal(a.get("username"), username));
+        Query query = em.createQuery(queryBuilder);
+        try {
+             User user = (User) query.getSingleResult();
+             return true;
+        } catch (NoResultException e) {
+            return false;
+        }
     }
    
 }

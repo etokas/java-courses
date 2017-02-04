@@ -7,6 +7,7 @@ package com.courses.controllers;
 
 import com.courses.dao.UserDao;
 import com.courses.entity.User;
+import com.courses.utils.Session;
 import java.io.Serializable;
 import java.util.List;
 import javax.ejb.EJB;
@@ -31,17 +32,29 @@ public class UserManaged implements Serializable {
     private String lastname;
     
     private String password;
+    
+    private String email;
+    
+    private String username;
         
+    private String invalidMessage;
     
     public String register(){
         
         try {
-             userDao.create(firstname, lastname, password, lastname);           
+            if (!userDao.userExist(username)) {
+                userDao.create(firstname, lastname, password, email, username); 
+                Session.getSession().setAttribute("username", username);
+                return "/security/profile.xhtml?faces-redirect=true";
+
+            } else {
+                invalidMessage = "Le nom d'utilisateur existe deja";
+                return "register";
+            }
         } catch (Exception e) {
             e.printStackTrace();
-        }
-       
-        return "/security/profile.xhtml?faces-redirect=true";
+        }       
+        return null;
     }
 
     public String getFirstname() {
@@ -67,6 +80,29 @@ public class UserManaged implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getInvalidMessage() {
+        return invalidMessage;
+    }
+
+    public void setInvalidMessage(String invalidMessage) {
+        this.invalidMessage = invalidMessage;
+    }
     
 }

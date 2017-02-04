@@ -24,10 +24,24 @@
                     </div>
                     <br></br>
                     <div class="form-group">
+                    <h:outputText value="Votre Email :"/>
+                    <h:inputText class="form-control" value="#{user.email}" id="email"></h:inputText>
+                    <h:message for="email"></h:message>
+                    </div>
+                    <br></br>
+                    <div class="form-group">
+                    <h:outputText value="Votre Nom d'utilisateur :"/>
+                    <h:inputText class="form-control" value="#{user.username}" id="username"></h:inputText>
+                    <h:message for="username"></h:message>
+                    </div>
+                    <br></br>
+                    <div class="form-group">
                     <h:outputText value="Votre mot de passe :"/>
                     <h:inputText class="form-control" value="#{user.password}" id="password"></h:inputText>
                     </div>
                     <br></br>
+                    
+                    <h:outputText value="#{user.invalidMessage}"></h:outputText>
 
                     <h:commandButton action="#{user.register()}" class="btn btn-info btn-block" value="S'enregistrer"></h:commandButton>
 
