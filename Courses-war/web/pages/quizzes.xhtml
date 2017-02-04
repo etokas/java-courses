@@ -8,7 +8,8 @@
         <ui:composition template="/layout.xhtml">
             <ui:define name="content" >
 
-                <h3>Formation fini</h3>
+                <div class="container">
+                    <h3>Formation fini</h3>
                 <p>Afin de valiser votre formation, veillez tester vos connaissances 
                     sur ce quizz ci-dessous liées au cours que vous venez de terminer
                 </p>
@@ -18,9 +19,10 @@
                 <hr></hr>
 
                 <h5>Veillez imprimer votre certificat</h5>
-                <h:link outcome="/pages/certificat" value="Imprimer">
+                <h:link role="button" class="btn btn-primary" outcome="/pages/certificat" value="Imprimer">
 
                 </h:link>
+                </div>
             </ui:define>
          </ui:composition>
     </h:body>

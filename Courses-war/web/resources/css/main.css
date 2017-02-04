@@ -13,9 +13,7 @@ body{
 
 #headerwrap {
   background: url(../resources/img/2.jpg) no-repeat center top;
-  margin-top: 80px;
   background-color: #F0F8FF;
-  padding-top: 10px;
   text-align:center;
   background-attachment: relative;
   background-position: center center;
@@ -37,7 +35,6 @@ body{
     font-weight: 800;
     font-size: 14px;
     padding-top: 15px;
-    padding-bottom: 15px;
 }
 
 .navbar-inverse {

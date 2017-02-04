@@ -68,8 +68,12 @@ public class UserDao extends AbstractDao{
         queryBuilder.where(getBuilder().equal(a.get("username"), username));
         Query query = em.createQuery(queryBuilder);
         try {
-             User user = (User) query.getSingleResult();
-             return true;
+            User user = (User) query.getSingleResult();
+            String hash = UserUtil.hashPassword(password, user.getSalt());
+            if (hash.equals(user.getPassword())) {
+                return true;
+            }
+            return false;
         } catch (NoResultException e) {
             return false;
         }

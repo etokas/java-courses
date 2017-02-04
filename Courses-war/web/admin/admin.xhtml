@@ -8,11 +8,12 @@
         <h:body>
         <ui:composition template="/layout.xhtml">
             <ui:define name="content" >
-                <h3>Espaces Administration</h3>
+                <div class="container">
+                    <h3>Espaces Administration</h3>
 
                 <h4>Liste de cours</h4>
 
-                <table>
+                <table class="table table-striped">
                     <tr>
                         <td>Tittre</td>
                         <td>Contenu</td>
@@ -30,7 +31,8 @@
                     </tr>
                     </c:forEach>
                 </table>
-                <h:link outcome="/admin/courses" value="Ajouter un cours" />
+                <h:link role="button" class="btn btn-info" outcome="/admin/courses" value="Ajouter un cours" />
+                </div>
             </ui:define>
         </ui:composition>
     </h:body>

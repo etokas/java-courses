@@ -18,7 +18,7 @@ import javax.faces.bean.RequestScoped;
  *
  * @author sylva
  */
-@ManagedBean
+@ManagedBean(name = "home")
 @RequestScoped
 public class HomeManaged {
     

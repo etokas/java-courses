@@ -7,17 +7,17 @@
     <h:body>
         <ui:composition template="/layout.xhtml">
             <ui:define name="content" >
-                <h3>Cours #{views.course.title}</h3>
+                <div class="container">
+                    <h3>Cours #{views.course.title}</h3>
 
-                <h4>Contenu </h4>
-
-                    <div class="content">
-                        <p>#{views.course.content}</p>
-                    </div>
-                <div class="finish">
-                    <h:link outcome="/pages/quizzes" value="Terminer">
-                        <f:param name="id" value="#{views.course.id}"/>
-                    </h:link>
+                        <div class="content">
+                            <p>#{views.course.content}</p>
+                        </div>
+                        <div class="finish">
+                            <h:link role="button" class="btn btn-primary" outcome="/pages/quizzes" value="Terminer">
+                                <f:param name="id" value="#{views.course.id}"/>
+                            </h:link>
+                        </div>
                 </div>
             </ui:define>
         </ui:composition>

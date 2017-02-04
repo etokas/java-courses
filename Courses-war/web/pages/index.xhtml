@@ -12,18 +12,19 @@
       <div class="row centered">
         <div class="col-lg-8 col-lg-offset-2">
             <p>Démarrer avec nos cours, ils sont gratuit</p>
-        <c:forEach var="c" items="#{home.courses}">
+                <c:forEach var="c" items="#{home.courses}">
+                    <table class="table table-striped">
                 <tr>
                     <td>#{c.title}</td>
-                    <td>#{c.content}</td>
                     <td>
-                        <h:link outcome="/pages/course" value="Lire le cours">
+                        <h:link role="button" class="btn btn-success" outcome="/pages/course" value="Lire le cours">
                             <f:param name="id" value="#{c.id}"/>
                         </h:link>
                     </td>
                 </tr>
+                    </table>
                 <br></br>
-            </c:forEach>
+                </c:forEach>
             <br></br><br></br>
 
         </div>

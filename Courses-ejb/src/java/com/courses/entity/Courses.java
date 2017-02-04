@@ -31,7 +31,7 @@ public class Courses implements Serializable {
     @Column
     private String title;
     
-    @Column
+    @Column(columnDefinition="TEXT")
     private String content;
     
     @OneToMany(targetEntity = Quizz.class, mappedBy = "course")
